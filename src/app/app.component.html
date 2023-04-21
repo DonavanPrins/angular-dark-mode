@@ -59,7 +59,18 @@
 
     <br><br>
 
-
+    <mat-table [dataSource]="tableData">
+      <ng-container matColumnDef="col1">
+        <mat-header-cell *matHeaderCellDef>col1</mat-header-cell>
+        <mat-cell *matCellDef="let obj">{{ obj.col1 }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="col2">
+        <mat-header-cell *matHeaderCellDef>col2</mat-header-cell>
+        <mat-cell *matCellDef="let obj">{{ obj.col2 }}</mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+      <mat-row matRipple *matRowDef="let obj; columns: columns"></mat-row>
+    </mat-table>
 
   </div>
   <div fxFlex="50">
